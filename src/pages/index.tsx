@@ -20,72 +20,142 @@ export default function Home() {
         <script src="https://unpkg.com/scrollreveal"></script>
       </Head>
       <main>
-        <header>
         <Header />
-        </header>
+        <section className="hero" id="hero">
+          <div className="app_container">
+            <h2 className="sub-headline">
+              <span className="first-letter">W</span>elcome
+            </h2>
+            <h1 className="headline">The Rosa</h1>
+            <div className="headline-description">
+              <div className="separator">
+                <div className="line line-left"></div>
+                <div className="asterisk">
+                  <i className="fas fa-asterisk"> </i>
+                </div>
+                <div className="line line-right"></div>
+              </div>
+              <div className="single-animation">
+                <h5>Ready to be opend</h5>
+                <a href="#" className="btn cta-btn">
+                  Explore
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+      <style jsx>
+        {`
+          /* Hero */
 
-      <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap");
-        /*Global styles*/
-        *,
-        *::before,
-        *::after {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-        
-        :root {
-          --main-font: "Source Sans Pro", sans-serif;
-          --secondary-font: "Herr Von Muellerhoff", cursive;
-          --body-font: "Cabin", sans-serif;
-          --main-font-color-dark: #252525;
-          --secondary-font-color: #c59d5f;
-          --body-font-color: #515151;
-        }
-        
-        html {
-          font-family: var( --body-font);
-          font-size: 10px;
-          color: var( --body-font-color);
-          scroll-behavior: smooth;
-        }
-        
-        section {
-          padding: 3.9rem 0;
-        }
-        
-        img {
-          width: 100%;
-          max-width: 100%;
-        }
-        
-        a {
-          text-decoration: none;
-        }
-        
-        p {
-          font-size: 1.6rem;
-        }
-        
-        .container {
-          width: 100%;
-          max-width: 122.5rem;
-          margin: 0 auto;
-          padding: 0 2.4rem;
-        }
-        
-        /* header */
-        header {
-          width: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1;
-          background-image: linear-gradient(to bottom, rgba( 0, 0, 0, 0.5), transparent);
-        }
-      `}</style>
+          .hero {
+            width: 100%;
+            height: 100vh;
+            background: url("./hero.jpg ") center no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+          }
+
+          .sub-headline {
+            font-size: 8.5rem;
+            font-family: var(--secondary-font);
+            color: var(--secondary-font-color);
+            font-weight: 100;
+            line-height: 0.4;
+            letter-spacing: 2px;
+          }
+
+          .first-letter {
+            text-transform: uppercase;
+            font-size: 10.3rem;
+          }
+
+          .headline {
+            color: #fff;
+            font-size: 3.7rem;
+            font-family: var(--main-font);
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 0.5rem;
+            margin-right: -0.5rem;
+          }
+
+          .separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .line {
+            width: 100%;
+            max-width: 8.4rem;
+            height: 0.25rem;
+            background-color: #fff;
+            position: relative;
+          }
+
+          .line-right::before,
+          .line-left::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 0.6rem solid transparent;
+          }
+
+          .line-right::before {
+            border-right-color: #fff;
+            right: 0;
+          }
+
+          .line-left::before {
+            border-left-color: #fff;
+            left: 0;
+          }
+
+          .asterisk {
+            font-size: 1.2rem;
+            color: var(--secondary-font-color);
+            margin: 0 1.6rem;
+          }
+
+          .headline-description h5 {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 100;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            letter-spacing: 3px;
+            margin-right: -3px;
+          }
+
+          .btn {
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-right: -2px;
+          }
+
+          .cta-btn {
+            font-size: 1.1rem;
+            background-color: #fff;
+            padding: 0.9rem 1.8rem;
+            color: var(--body-font-color);
+            border-radius: 0.4rem;
+            transition: background-color 0.5s;
+          }
+
+          .cta-btn:hover,
+          .cta-btn:focus {
+            color: #fff;
+            background-color: var(--secondary-font-color);
+          }
+        `}
+      </style>
     </div>
   );
 }
